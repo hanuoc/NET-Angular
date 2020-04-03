@@ -1,32 +1,33 @@
+import { AlertifyService } from './../_service/alertify.service';
 import { AuthService } from './../_service/auth.service';
 import { Component, OnInit } from '@angular/core';
+import { BsDropdownConfig } from 'ngx-bootstrap';
 
 @Component({
   selector: 'app-nav',
   templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  styleUrls: ['./nav.component.css'],
+  providers: [{ provide: BsDropdownConfig, useValue: { isAnimated: true, autoClose: true } }]
 })
 export class NavComponent implements OnInit {
 
   model: any = {};
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService, private alertService: AlertifyService) { }
 
   ngOnInit() {
   }
-  Login(){
-    this.authService.login(this.model).subscribe(next =>{
-      console.log("Login succsetfully");
-    },error =>{
-      console.log(error);
-    })
+  Login() {
+    this.authService.login(this.model).subscribe(next => {
+      this.alertService.success('Login successfully');
+    }, error => {
+      this.alertService.error(error);
+    });
   }
-  loggedIn(){
-    const token = localStorage.getItem('token');
-    return !!token;
+  loggedIn() {
+    return this.authService.loggedIn();
   }
-  logout(){
+  logout() {
     localStorage.removeItem('token');
-    console.log('Logged out!');
-    
+    this.alertService.message('Logged out!');
   }
 }

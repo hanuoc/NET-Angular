@@ -1,3 +1,4 @@
+import { AlertifyService } from './_service/alertify.service';
 import { AuthService } from './_service/auth.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -8,6 +9,8 @@ import {FormsModule} from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { RegisterComponent } from './register/register.component';
 import { ErrorInterceptorProvider } from './_service/error.interceptor';
+import { BsDropdownModule } from 'ngx-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
    declarations: [
@@ -19,11 +22,14 @@ import { ErrorInterceptorProvider } from './_service/error.interceptor';
    imports: [
       BrowserModule,
       HttpClientModule,
-      FormsModule
+      FormsModule,
+      BrowserAnimationsModule,
+      BsDropdownModule.forRoot()
    ],
    providers: [
       AuthService,
-      ErrorInterceptorProvider
+      ErrorInterceptorProvider,
+      AlertifyService
    ],
    bootstrap: [
       AppComponent

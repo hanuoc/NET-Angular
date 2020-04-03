@@ -8569,11 +8569,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Project\\WebApi\\WebApi\\WebApi.csproj",
+      "projectUniqueName": "D:\\Project\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj",
       "projectName": "WebApi",
-      "projectPath": "D:\\Project\\WebApi\\WebApi\\WebApi.csproj",
+      "projectPath": "D:\\Project\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\Project\\WebApi\\WebApi\\obj\\",
+      "outputPath": "D:\\Project\\NET-Angular\\WebApi\\WebApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

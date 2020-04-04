@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Project\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj": {}
+    "D:\\Learn\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj": {}
   },
   "projects": {
-    "D:\\Project\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj": {
+    "D:\\Learn\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Project\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj",
+        "projectUniqueName": "D:\\Learn\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj",
         "projectName": "WebApi",
-        "projectPath": "D:\\Project\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj",
-        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "D:\\Project\\NET-Angular\\WebApi\\WebApi\\obj\\",
+        "projectPath": "D:\\Learn\\NET-Angular\\WebApi\\WebApi\\WebApi.csproj",
+        "packagesPath": "C:\\Users\\hvnuoc\\.nuget\\packages\\",
+        "outputPath": "D:\\Learn\\NET-Angular\\WebApi\\WebApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\hvnuoc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -38,6 +43,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.3, )"

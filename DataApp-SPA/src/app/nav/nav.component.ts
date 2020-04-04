@@ -2,6 +2,7 @@ import { AlertifyService } from './../_service/alertify.service';
 import { AuthService } from './../_service/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { BsDropdownConfig } from 'ngx-bootstrap';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -12,7 +13,7 @@ import { BsDropdownConfig } from 'ngx-bootstrap';
 export class NavComponent implements OnInit {
 
   model: any = {};
-  constructor(public authService: AuthService, private alertService: AlertifyService) { }
+  constructor(public authService: AuthService, private alertService: AlertifyService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -21,6 +22,8 @@ export class NavComponent implements OnInit {
       this.alertService.success('Login successfully');
     }, error => {
       this.alertService.error(error);
+    }, () => {
+      this.router.navigate(['/members']);
     });
   }
   loggedIn() {
@@ -29,5 +32,6 @@ export class NavComponent implements OnInit {
   logout() {
     localStorage.removeItem('token');
     this.alertService.message('Logged out!');
+    this.router.navigate(['/home']);
   }
 }

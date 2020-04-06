@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using WebApi.Data;
+using WebApi.DTOs;
 
 namespace WebApi.Controller
 {
@@ -16,10 +18,12 @@ namespace WebApi.Controller
     public class ValuesController : ControllerBase
     {
         private readonly DataContext _context;
+        private readonly IMapper _mapper;
 
-        public ValuesController(DataContext context)
+        public ValuesController(DataContext context, IMapper mapper)
         {
             _context = context;
+            this._mapper = mapper;
         }
         // GET: api/Values
         [AllowAnonymous]
@@ -27,7 +31,8 @@ namespace WebApi.Controller
         public async Task<IActionResult> GetValues()
         {
             var values = await _context.Values.ToListAsync();
-            return Ok(values);
+            var valuesToReturn = _mapper.Map<IEnumerable<ValueForListDto>>(values);
+            return Ok(valuesToReturn);
         }
 
         // GET: api/Values/5

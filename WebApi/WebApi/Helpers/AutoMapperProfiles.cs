@@ -28,6 +28,11 @@ namespace WebApi.Helpers
                     opt.MapFrom(src => src.DateOfBirth.CaculateAge());
                 });
             CreateMap<Photo, PhotoForDetailedDto>();
+            CreateMap<Value, ValueForListDto>();
+            CreateMap<UserForUpdateDto, User>();
+            CreateMap<Photo, PhotoForReturnDto>();
+            CreateMap<PhotoForCreationDto, Photo>();
+
         }
     }
 }

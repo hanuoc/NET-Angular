@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
@@ -27,7 +28,7 @@ namespace WebApi.Controller
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
-            var users = _datingRepository.GetUsers();
+            var users = await _datingRepository.GetUsers();
             var usersToReturn = _mapper.Map<IEnumerable<UserForListDto>>(users);
             return Ok(usersToReturn);
         }
@@ -35,9 +36,20 @@ namespace WebApi.Controller
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUser(int id)
         {
-            var user = _datingRepository.GetUser(id);
-            var userToReturn = _mapper.Map<UserForDetailedDto>(user);
+            var user = await _datingRepository.GetUser(id);
+            var userToReturn =  _mapper.Map<UserForDetailedDto>(user);
             return Ok(userToReturn);
+        }
+        [HttpPut("{id}")]
+        public async Task<IActionResult> UpdateUser(int id, UserForUpdateDto userForUpdateDto)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+            var userForRepo = await _datingRepository.GetUser(id);
+            _mapper.Map(userForUpdateDto, userForRepo);
+            if (await _datingRepository.SaveAll())
+                return NoContent();
+            throw new Exception($"Updatin use {id} fail on save");
         }
     }
 }

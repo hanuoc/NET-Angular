@@ -266,4 +266,5 @@ D:\Learn\NET-Angular\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.pdb
 D:\Learn\NET-Angular\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.csprojAssemblyReference.cache
 D:\Learn\NET-Angular\WebApi\WebApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
 D:\Learn\NET-Angular\WebApi\WebApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Learn\NET-Angular\WebApi\WebApi\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
 D:\Learn\NET-Angular\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cache

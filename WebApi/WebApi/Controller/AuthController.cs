@@ -35,9 +35,10 @@ namespace WebApi.Controller
         {
             userForRegisterDto.Username = userForRegisterDto.Username.ToLower();
             if (await _authRepository.UserExsits(userForRegisterDto.Username)) return BadRequest("Username alrealy exsits");
-            var userToCreate = new User() {Username = userForRegisterDto.Username };
+            var userToCreate = _mapper.Map<User>(userForRegisterDto);
             var createUser = await _authRepository.Register(userToCreate, userForRegisterDto.Password);
-            return Ok(createUser);
+            var userToReturn = _mapper.Map<UserForDetailedDto>(createUser);
+            return CreatedAtRoute("GetUser",new {controller ="Users",id = createUser.Id }, userToReturn );
 
         }
         [HttpPost("login")]

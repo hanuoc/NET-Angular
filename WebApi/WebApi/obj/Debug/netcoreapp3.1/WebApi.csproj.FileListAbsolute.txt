@@ -268,3 +268,9 @@ D:\Learn\NET-Angular\WebApi\WebApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
 D:\Learn\NET-Angular\WebApi\WebApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Learn\NET-Angular\WebApi\WebApi\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
 D:\Learn\NET-Angular\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.MvcApplicationPartsAssemblyInfo.cache
+D:\Project\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CoreCompileInputs.cache
+D:\Project\WebApi\WebApi\bin\Debug\netcoreapp3.1\Data\UserSeedData.json
+D:\Project\WebApi\WebApi\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\Project\WebApi\WebApi\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Project\WebApi\WebApi\bin\Debug\netcoreapp3.1\CloudinaryDotNet.dll
+D:\Project\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.genruntimeconfig.cache

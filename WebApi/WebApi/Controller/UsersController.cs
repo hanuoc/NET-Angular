@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApi.Data;
 using WebApi.DTOs;
 using WebApi.Helpers;
+using WebApi.Model;
 
 namespace WebApi.Controller
 {
@@ -69,6 +70,29 @@ namespace WebApi.Controller
             if (await _datingRepository.SaveAll())
                 return NoContent();
             throw new Exception($"Updatin use {id} fail on save");
+        }
+        [HttpPost("{id}/like/{recipientId}")]
+        public async Task<IActionResult> LikeUser(int id, int recipientId)
+        {
+            if (id != int.Parse(User.FindFirst(ClaimTypes.NameIdentifier).Value))
+                return Unauthorized();
+
+            var like = await _datingRepository.GetLike(id, recipientId);
+            if (like != null)
+                return BadRequest(" You already like this user");
+            if (await _datingRepository.GetUser(recipientId) == null)
+                return NotFound();
+            like = new Like
+            {
+                LikerId = id,
+                LikeeId = recipientId
+            };
+            _datingRepository.Add<Like>(like);
+
+            if (await _datingRepository.SaveAll())
+                return Ok();
+
+            return BadRequest("Failed to like user");
         }
     }
 }

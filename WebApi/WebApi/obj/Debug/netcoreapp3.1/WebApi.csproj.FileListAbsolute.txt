@@ -126,7 +126,6 @@ D:\Project\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.RazorTargetAssemblyInfo.
 D:\Project\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.csproj.CopyComplete
 D:\Project\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.dll
 D:\Project\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.pdb
-D:\Project\WebApi\WebApi\obj\Debug\netcoreapp3.1\WebApi.csprojAssemblyReference.cache
 D:\Project\WebApi\WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Project\WebApi\WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 D:\Project\WebApi\WebApi\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
